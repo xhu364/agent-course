@@ -3,8 +3,8 @@ from google import genai
 from config import GEMINI_API_KEY
 from chat_history import ChatHistory
 
-
 MODEL_NAME = "gemini-2.5-flash-lite"
+
 
 def main():
     client = genai.Client(api_key=GEMINI_API_KEY)
@@ -20,8 +20,7 @@ def main():
         history.add_user(user_input)
 
         response = client.models.generate_content(
-            model=MODEL_NAME,
-            contents=history.get_messages()
+            model=MODEL_NAME, contents=history.get_messages()
         )
 
         print(f"Assistant: {response.text}")
@@ -29,6 +28,7 @@ def main():
         history.add_assistant(response.text)
 
     print(history.get_messages())
+
 
 if __name__ == "__main__":
     main()

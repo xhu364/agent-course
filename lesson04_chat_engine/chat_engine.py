@@ -15,8 +15,7 @@ class ChatEngine:
         self.history.add_user(user_message)
 
         response = self.client.models.generate_content(
-            model=self.model,
-            contents=self.history.get_messages()
+            model=self.model, contents=self.history.get_messages()
         )
 
         answer = response.text

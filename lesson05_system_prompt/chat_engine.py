@@ -19,9 +19,7 @@ class ChatEngine:
         response = self.client.models.generate_content(
             model=self.model,
             contents=self.history.get_messages(),
-            config={
-                "system_instruction": self.system_prompt
-            }
+            config={"system_instruction": self.system_prompt},
         )
 
         answer = response.text

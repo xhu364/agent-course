@@ -2,7 +2,8 @@ from chat_engine import ChatEngine
 from chat_history import ChatHistory
 from config import GEMINI_API_KEY
 
-model="gemini-2.5-flash-lite"
+model = "gemini-2.5-flash-lite"
+
 
 def main():
     history = ChatHistory()
@@ -15,6 +16,7 @@ def main():
             break
         if msg:
             print(f"Model: {engine.chat(msg)}")
+
 
 if __name__ == "__main__":
     main()

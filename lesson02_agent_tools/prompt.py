@@ -6,8 +6,7 @@ class PromptTemplate:
     def format(self, **kwargs):
         return self.template.format(**kwargs)
 
-prompt_text = PromptTemplate(
-    """
+
+prompt_text = PromptTemplate("""
     Explain {topic}
-    """
-)
+    """)
