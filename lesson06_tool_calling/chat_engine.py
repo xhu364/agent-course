@@ -1,7 +1,7 @@
 from google import genai
 
 from chat_history import ChatHistory
-from tools import get_weather, calculator
+from tools import get_weather, calculator, get_time
 
 
 def get_tools():
@@ -21,14 +21,26 @@ def get_tools():
                 },
                 {
                     "name": "calculator",
-                    "description": "Get result of math of two numbers",
+                    "description": "Evaluate a mathematical expression and return the calculated result. "
+                        "Use this tool when the user asks to perform arithmetic calculations "
+                        "or solve a numeric expression.",
                     "parameters": {
                         "type": "OBJECT",
                         "properties": {
-                            "number1": {"type": "INTEGER"},
-                            "number2": {"type": "INTEGER"},
+                            "expression": {"type": "STRING"}
                         },
-                        "required": ["number1", "number2"],
+                        "required": ["expression"],
+                    },
+                },
+                {
+                    "name": "get_time",
+                    "description": "Get the current local time for a city. ",
+                    "parameters": {
+                        "type": "OBJECT",
+                        "properties": {
+                            "city": {"type": "STRING"}
+                        },
+                        "required": ["city"],
                     },
                 },
             ]
@@ -49,7 +61,10 @@ class ChatEngine:
             return get_weather(args["city"])
 
         if name == "calculator":
-            return calculator(args["number1"], args["number2"])
+            return calculator(args["expression"])
+
+        if name == "get_time":
+            return get_time(args["city"])
 
         raise ValueError(f"Unknown tool {name}")
 

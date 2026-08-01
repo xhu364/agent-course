@@ -10,6 +10,7 @@ engine = ChatEngine(
 print(
     engine.chat(
         # "What is the weather in Boston now?"
-        "What is 1000 add 123"
+        #"What is value for (2*3*4*5.2)"
+        "what is the local time in Boston"
     )
 )
