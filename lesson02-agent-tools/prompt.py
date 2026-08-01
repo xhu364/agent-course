@@ -1,20 +1,13 @@
-CODE_REVIEW_TEMPLATE = """
-You are a senior software engineer.
+class PromptTemplate:
 
-Review this code:
+    def __init__(self, template):
+        self.template = template
 
-{code}
+    def format(self, **kwargs):
+        return self.template.format(**kwargs)
 
-Find:
-- bugs
-- security issues
-- performance issues
-
-Provide suggestions.
-"""
-
-
-def create_prompt(code):
-    return CODE_REVIEW_TEMPLATE.format(
-        code=code
-    )
+prompt_text = PromptTemplate(
+    """
+    Explain {topic}
+    """
+)

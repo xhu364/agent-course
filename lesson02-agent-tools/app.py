@@ -1,7 +1,7 @@
 from google import genai
 
 from config import GEMINI_API_KEY
-from prompt import create_prompt
+from prompt import prompt_text
 
 
 client = genai.Client(
@@ -15,7 +15,9 @@ def divide(a,b):
 """
 
 
-prompt = create_prompt(code)
+prompt = prompt_text.format(
+    topic="Kafka"
+)
 
 print(prompt)
 
