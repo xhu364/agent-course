@@ -9,7 +9,7 @@ engine = ChatEngine(
 
 print(
     engine.chat(
-        "What is the weather in Boston now?"
-        # "What is 1000 minus 123"
+        # "What is the weather in Boston now?"
+        "What is 1000 add 123"
     )
 )

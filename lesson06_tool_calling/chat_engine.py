@@ -65,42 +65,18 @@ class ChatEngine:
         candidate = response.candidates[0]
 
         # Check if Gemini wants a tool call
-        parts = candidate.content.parts
+        content = candidate.content
+        self.history.add_content(content)
 
-        for part in parts:
+        for part in content.parts:
             if part.function_call:
                 tool_call = part.function_call
-                print(tool_call.args)
-                print(tool_call.name)
                 result = self.execute_tool(tool_call.name, tool_call.args)
-                print(f"result {result}")
+                self.history.add_function_response(name=tool_call.name, result=result)
+
                 response = self.client.models.generate_content(
                     model=self.model,
-                    contents=[
-                        *self.history.get_messages(),
-                        {
-                            "role": "model",
-                            "parts": [
-                                {
-                                    "function_call": {
-                                        "name": tool_call.name,
-                                        "args": tool_call.args,
-                                    }
-                                }
-                            ],
-                        },
-                        {
-                            "role": "user",
-                            "parts": [
-                                {
-                                    "function_response": {
-                                        "name": tool_call.name,
-                                        "response": {"result": result},
-                                    }
-                                }
-                            ],
-                        },
-                    ],
+                    contents=self.history.get_messages(),
                     config={
                         "tools": get_tools(),
                         "system_instruction": self.system_prompt,
@@ -113,7 +89,7 @@ class ChatEngine:
                 self.history.add_message("model", answer)
 
             return answer
-            # Normal response
+
         answer = response.text
 
         self.history.add_message("model", answer)
