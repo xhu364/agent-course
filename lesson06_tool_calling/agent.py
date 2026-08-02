@@ -25,28 +25,29 @@ class Agent:
     def run(self, message, history):
         history.add_message("user", message)
 
-        content = self.engine.generate(history)
+        while True:
+            content = self.engine.generate(history)
 
-        history.add_content(content)
+            history.add_content(content)
 
-        print(f"xxx {content}")
+            tool_use = False
+            for part in content.parts:
+                if part.function_call:
+                    tool_use = True
+                    tool_call = part.function_call
+                    result = self.execute_tool(tool_call.name, tool_call.args)
+                    history.add_function_response(name=tool_call.name, result=result)
 
-        for part in content.parts:
-            if part.function_call:
-                tool_call = part.function_call
-                result = self.execute_tool(tool_call.name, tool_call.args)
-                history.add_function_response(name=tool_call.name, result=result)
+            response = self.engine.generate(history)
 
-                response = self.engine.generate(history)
-                print(f"yyy {response}")
-                answer = response.text
+            if tool_use:
+                continue
+            answer = ""
 
-                history.add_message("model", answer)
+            for part in content.parts:
+                if part.text:
+                    answer += part.text
+
+            history.add_message("model", answer)
 
             return answer
-
-        answer = response.text
-
-        history.add_message("model", answer)
-
-        return answer

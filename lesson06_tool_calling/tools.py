@@ -39,6 +39,7 @@ def calculator(expression):
     except Exception as e:
         return f"Invalid expression: {e}"
 
+
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -82,6 +83,7 @@ def get_time(city):
 
     return current_time.strftime("%Y-%m-%d %I:%M:%S %p %Z")
 
+
 def get_tools():
     return [
         {
@@ -100,13 +102,11 @@ def get_tools():
                 {
                     "name": "calculator",
                     "description": "Evaluate a mathematical expression and return the calculated result. "
-                        "Use this tool when the user asks to perform arithmetic calculations "
-                        "or solve a numeric expression.",
+                    "Use this tool when the user asks to perform arithmetic calculations "
+                    "or solve a numeric expression.",
                     "parameters": {
                         "type": "OBJECT",
-                        "properties": {
-                            "expression": {"type": "STRING"}
-                        },
+                        "properties": {"expression": {"type": "STRING"}},
                         "required": ["expression"],
                     },
                 },
@@ -115,9 +115,7 @@ def get_tools():
                     "description": "Get the current local time for a city. ",
                     "parameters": {
                         "type": "OBJECT",
-                        "properties": {
-                            "city": {"type": "STRING"}
-                        },
+                        "properties": {"city": {"type": "STRING"}},
                         "required": ["city"],
                     },
                 },

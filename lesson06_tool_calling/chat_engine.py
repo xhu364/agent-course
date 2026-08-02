@@ -17,7 +17,10 @@ class ChatEngine:
         response = self.client.models.generate_content(
             model=self.model,
             contents=history.get_messages(),
-            config={"tools": self.tool_registry, "system_instruction": self.system_prompt},
+            config={
+                "tools": self.tool_registry,
+                "system_instruction": self.system_prompt,
+            },
         )
         return response.candidates[0].content
 
