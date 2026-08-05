@@ -36,7 +36,6 @@ while True:
                 tool_call_id=tool_call["id"],
             )
         )
-        messages.append(tool_result)
 
 answer = messages[-1].content
 print(answer)

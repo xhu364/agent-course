@@ -1,0 +1,251 @@
+Company Policy Handbook
+
+Company Name: TechNova Solutions
+Document Version: 3.2
+Effective Date: January 1, 2026
+Owner: Human Resources Department
+
+==================================================
+
+1. Introduction
+
+This employee handbook defines the policies, procedures, and guidelines that all employees of TechNova Solutions must follow.
+
+The purpose of these policies is to create a safe, productive, and respectful workplace while ensuring consistent decision-making across all departments.
+
+All employees are expected to read, understand, and comply with these policies. Failure to follow company policies may result in disciplinary action.
+
+==================================================
+
+2. Working Hours and Attendance Policy
+
+Standard working hours are Monday through Friday, 9:00 AM to 5:00 PM local time.
+
+Employees are expected to be available during core business hours from 10:00 AM to 3:00 PM for collaboration with team members.
+
+Employees who are unable to attend work must notify their manager as soon as possible.
+
+Attendance issues include:
+
+- Repeated late arrivals
+- Missing scheduled meetings without notice
+- Failure to communicate absences
+- Leaving work early without approval
+
+Managers are responsible for monitoring attendance patterns and discussing repeated attendance problems with employees.
+
+==================================================
+
+3. Remote Work Policy
+
+TechNova Solutions supports flexible remote work arrangements.
+
+Employees may work remotely up to three days per week with manager approval.
+
+Remote employees must:
+
+- Maintain a reliable internet connection
+- Protect confidential company information
+- Attend required meetings
+- Remain reachable during working hours
+
+Employees working remotely must use company-approved devices and security tools.
+
+Remote work privileges may be revoked if productivity, communication, or security requirements are not maintained.
+
+==================================================
+
+4. Paid Time Off (PTO) Policy
+
+Employees receive paid time off based on their employment level and years of service.
+
+Full-time employees receive:
+
+Years of Service:
+0-2 years: 15 PTO days per year
+3-5 years: 20 PTO days per year
+More than 5 years: 25 PTO days per year
+
+Employees should request PTO at least two weeks in advance whenever possible.
+
+Managers may deny PTO requests during critical business periods if staffing requirements cannot be met.
+
+Unused PTO rollover is limited to 10 days per calendar year.
+
+==================================================
+
+5. Sick Leave Policy
+
+Employees may use sick leave for:
+
+- Personal illness
+- Medical appointments
+- Caring for immediate family members
+- Health-related emergencies
+
+Employees should notify their manager before the start of their scheduled workday when taking sick leave.
+
+For absences longer than five consecutive business days, employees may be required to provide medical documentation.
+
+==================================================
+
+6. Information Security Policy
+
+Protecting company information is a critical responsibility of every employee.
+
+Employees must:
+
+- Use strong passwords
+- Enable multi-factor authentication
+- Lock computers when away from their desks
+- Report security incidents immediately
+
+Employees must not:
+
+- Share passwords
+- Install unauthorized software
+- Transfer confidential data to personal accounts
+- Store company data on unapproved cloud services
+
+Security violations may result in termination of employment.
+
+==================================================
+
+7. Password Policy
+
+All employees must follow these password requirements:
+
+- Passwords must contain at least 12 characters
+- Passwords must include uppercase and lowercase letters
+- Passwords must include numbers or special characters
+- Passwords cannot be reused from previous passwords
+
+Passwords must be changed every 180 days.
+
+Employees should use the company password manager to store credentials securely.
+
+==================================================
+
+8. Expense Reimbursement Policy
+
+Employees may request reimbursement for approved business expenses.
+
+Eligible expenses include:
+
+- Business travel
+- Customer meetings
+- Training programs
+- Required work equipment
+
+Employees must submit expense reports within 30 days of the expense date.
+
+Each expense report must include:
+
+- Date of expense
+- Business purpose
+- Amount spent
+- Receipt documentation
+
+Expenses over $1,000 require manager approval before purchase.
+
+==================================================
+
+9. Travel Policy
+
+Business travel must be approved by the employee's manager before booking.
+
+Employees should select reasonable travel options that balance cost, convenience, and business needs.
+
+Approved travel expenses include:
+
+- Economy-class airfare
+- Hotel accommodations
+- Ground transportation
+- Meals during business travel
+
+Employees may not upgrade flights or hotels without prior approval.
+
+==================================================
+
+10. Code of Conduct Policy
+
+Employees are expected to maintain professional behavior at all times.
+
+Prohibited behaviors include:
+
+- Harassment
+- Discrimination
+- Workplace violence
+- Retaliation against employees reporting concerns
+
+Employees should report violations to:
+
+- Their manager
+- Human Resources
+- The confidential ethics hotline
+
+All reports will be reviewed according to company investigation procedures.
+
+==================================================
+
+11. Performance Review Policy
+
+Employees participate in formal performance reviews twice per year.
+
+Performance reviews evaluate:
+
+- Technical skills
+- Quality of work
+- Collaboration
+- Communication
+- Achievement of goals
+
+Managers provide feedback and create development plans when improvement opportunities are identified.
+
+Employees are encouraged to discuss career goals with their managers.
+
+==================================================
+
+12. Employee Benefits Policy
+
+Eligible employees may receive:
+
+- Health insurance
+- Dental insurance
+- Vision insurance
+- Retirement plan contributions
+- Professional development benefits
+
+Benefits eligibility depends on employment status and enrollment deadlines.
+
+Employees should contact Human Resources for questions regarding benefits.
+
+==================================================
+
+13. Termination Policy
+
+Employment may end due to:
+
+- Employee resignation
+- Performance issues
+- Policy violations
+- Business restructuring
+
+Employees leaving the company must:
+
+- Return company equipment
+- Transfer knowledge to team members
+- Remove company data from personal devices
+- Complete exit procedures
+
+Final compensation will be processed according to applicable laws and company procedures.
+
+==================================================
+
+14. Policy Updates
+
+The company may modify policies as business needs change.
+
+Employees will be notified of significant policy updates through official communication channels.
+
+The latest version of this handbook is maintained by the Human Resources Department.
