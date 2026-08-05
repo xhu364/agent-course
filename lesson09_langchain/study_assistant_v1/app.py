@@ -1,6 +1,6 @@
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 from langchain_core.output_parsers import StrOutputParser
-from prompt import (initial_prompt, example_prompt, quiz_prompt, keyword_prompt)
+from prompt import initial_prompt, example_prompt, quiz_prompt, keyword_prompt
 from llm import create_llm
 from add_metadata import add_metadata
 
@@ -8,12 +8,9 @@ prompt = initial_prompt
 llm = create_llm()
 parser = StrOutputParser()
 
-initial_chain = (RunnablePassthrough.assign(
-    explanation=prompt | llm | parser
-).assign(
+initial_chain = RunnablePassthrough.assign(explanation=prompt | llm | parser).assign(
     summary=lambda x: x["explanation"]
 ) | RunnableLambda(add_metadata)
-)
 
 example_chain = (
     RunnableLambda(lambda x: {"explanation": x["explanation"]})
@@ -44,7 +41,7 @@ chain = initial_chain | RunnablePassthrough.assign(
 
 response = chain.invoke({"topic": "Python decorators"})
 print(response)
-#{
+# {
 #    "question": "...",
 #    "summary": "...",
 #    "metadata": {
@@ -54,5 +51,4 @@ print(response)
 #    "quiz": "...",
 #    "keywords": [...],
 #    "examples": "..."
-#}
-
+# }

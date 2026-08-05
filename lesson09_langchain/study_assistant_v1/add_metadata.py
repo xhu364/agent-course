@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 def add_metadata(data):
     summary = data["summary"]
 
@@ -11,6 +12,6 @@ def add_metadata(data):
             "summary_length": len(summary),
             "word_count": len(summary.split()),
             "language": "English",
-            "version": "1.0"
-        }
+            "version": "1.0",
+        },
     }
