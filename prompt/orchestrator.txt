@@ -1,0 +1,58 @@
+Build a minimal, runnable Python multi-agent system using LangGraph.
+
+Start from the single-agent system described above.
+
+Requirements:
+
+* Use the single-agent implementation from above as the basis for agent1 and agent2.
+* Use LangChain chat-model adapters as the unified LLM interface.
+* Use LangGraph only for orchestration and state flow.
+* Do not use LangChain AgentExecutor or any other agent framework.
+* Start the LangGraph workflow with a user_request.
+* Add an LLM-based Orchestrator Agent.
+* The Orchestrator Agent receives the original user_request and decides which agent(s) should process it:
+* agent1
+* agent2
+* or both agent1 and agent2
+* The Orchestrator must make this decision dynamically using the LLM; do not hard-code the routing decision.
+* Use LangGraph conditional edges to implement the routing.
+* Each selected agent must receive and process the original user_request.
+* If both agents are selected, both should process the original user_request.
+* The outputs of the selected agent(s) must then be passed to a summary_agent.
+* The summary_agent receives only the selected agent output(s) as its input and produces the final response.
+* The summary_agent must not receive the raw user_request or the Orchestrator's routing decision/output directly.
+* The Orchestrator's output should be used only for routing.
+* The final result returned by the graph should be the response produced by summary_agent.
+
+```python
+class State(TypedDict):
+    user_request: str
+    agent1: str
+    agent2: str
+    summary_input: str
+    summary: str
+    route: list[str]
+```
+
+Architecture:
+
+```text
+User Request
+  |
+Orchestrator
+  |
+  +------> agent1 -----------+
+  |                          |
+  +------> agent2 -----------+----> Summary Agent ----> Final Response
+```
+
+Keep the implementation minimal.
+
+Provide:
+
+1. Complete runnable Python code.
+2. Required dependencies.
+3. A brief explanation of the LangGraph data flow.
+
+Do not use LangChain AgentExecutor or other agent frameworks.
+

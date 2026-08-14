@@ -1,0 +1,47 @@
+Build a minimal, runnable Python multi-agent system using LangGraph.
+
+Start from the single-agent system described above.
+
+Requirements:
+
+* Use LangChain chat-model adapters for the LLM.
+* Use LangGraph only for orchestration.
+* Start with a user request.
+* Send the request to three independent agents: `agent1`, `agent2`, and `agent3`.
+* Each agent will has it own prompt, which should be passed when the agent is initialized
+* Run the three agents in parallel using LangGraph.
+* Each agent returns its own analysis.
+* Send all three outputs to a `summary_agent`.
+* The `summary_agent` combines the three analyses and returns the final response.
+* Use a simple shared state:
+
+```python
+class State(TypedDict):
+    user_request: str
+    agent1: str
+    agent2: str
+    agent3: str
+    summary: str
+```
+
+Architecture:
+
+```text
+User Request
+     |
+     +----> Agent 1 ----+
+     |                  |
+     +----> Agent 2 ----+----> Summary Agent ----> Final Response
+     |                  |
+     +----> Agent 3 ----+
+```
+
+Keep the implementation minimal.
+
+Provide:
+
+1. Complete runnable Python code.
+2. Required dependencies.
+3. A brief explanation of the LangGraph data flow.
+
+Do not use LangChain AgentExecutor or other agent frameworks.

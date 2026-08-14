@@ -1,0 +1,14 @@
+Create a minimal, runnable Python single-agent system.
+
+* Use plain Python for the agent logic and tool-call loop.
+* Use LangChain chat-model adapters, BaseChatModel, only to provide a unified LLM interface across providers such as Gemini and Ollama.
+* Support tool calling.
+* Implement the tool-call loop explicitly with a max iteration limit.
+* Maintain chat history.
+* Return a final response.
+* Do not use LangChain agents, AgentExecutor, LangGraph, or other agent frameworks.
+* Accept a configurable system_prompt parameter so different agent instances can adopt specific roles.
+* Create SingleAgent class and seperate it into a different file
+* Keep the code modular so we can extend it later.
+
+

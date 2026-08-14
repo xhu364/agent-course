@@ -1,0 +1,58 @@
+Build a minimal, runnable Python multi-agent system using LangGraph.
+
+Requirements:
+- Start from a working single-agent system that uses plain Python for the agent logic and tool-call loop.
+- Use LangChain chat-model adapters and BaseChatModel only as a unified LLM interface across providers such as Gemini and Ollama.
+- The single-agent logic must include:
+  - explicit tool-calling loop
+  - max iteration limit
+  - chat history maintained in memory
+  - final response returned
+  - configurable system_prompt parameter for different agent roles
+  - no LangChain AgentExecutor, no LangGraph agent framework, no LangChain agents
+- Create a separate file for the SingleAgent class.
+- Then build a minimal LangGraph orchestration around that single-agent system.
+- Use LangGraph only for orchestration; do not use other agent frameworks.
+
+Architecture requirements:
+- Use a State TypedDict exactly like this:
+  class State(TypedDict):
+      user_request: str
+      agent1: str
+      agent2: str
+      agent3: str
+      summary: str
+
+- Flow:
+  - START -> agent1
+  - START -> agent3
+  - agent1 -> agent2
+  - agent2 -> summary_agent
+  - agent3 -> summary_agent
+
+- Important:
+  - agent1 and agent3 must run in parallel from the same original user_request
+  - agent2 must wait for agent1
+  - summary_agent must wait for both agent2 and agent3
+  - the summary_agent must combine only the outputs from agent2 and agent3
+  - do not send agent1 output to summary_agent directly
+  - do not allow agent3 to influence agent2
+  - do not allow agent2 to influence agent3
+
+- Keep the implementation minimal and readable.
+- Use only a plain graph with explicit edges; do not create a fake parallel wrapper node that hides the actual graph structure.
+
+Implementation details:
+- Create:
+  - single_agent.py containing the SingleAgent class
+  - main.py containing the LangGraph graph and example execution
+- Provide complete runnable Python code.
+- Provide required dependencies.
+- Add a brief explanation of the LangGraph data flow.
+
+Important correctness constraints:
+- Use explicit graph edges, not just a parallel function call.
+- The graph must reflect the real dependency structure.
+- The summary node must be the final node.
+- The code must be runnable without requiring the user to change the core architecture.
+- Use a mock/fallback LLM option so the example can run even without external model credentials during local testing.
