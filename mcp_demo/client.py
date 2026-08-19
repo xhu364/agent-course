@@ -6,8 +6,11 @@ from mcp.client.stdio import stdio_client
 
 async def main():
     server_params = StdioServerParameters(
-        command="python",
-        args=["server2.py"],
+        #command="python",
+        #args=["server2.py"],
+        command="/home/xhuang/llm-agent-course/.venv/bin/python",
+        args=["/home/xhuang/llm-agent-course/mcp_demo/server2.py"],
+
     )
 
     async with stdio_client(server_params) as (read, write):

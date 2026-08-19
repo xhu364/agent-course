@@ -15,6 +15,9 @@ cuda-bindings==13.3.1
 cuda-pathfinder==1.6.0
 cuda-toolkit==13.0.3.0
 distro==1.9.0
+dotenv==0.9.9
+fastapi==0.141.1
+fastmcp==2.0.0
 filelock==3.32.2
 filetype==1.2.0
 frozenlist==1.8.0
@@ -76,6 +79,7 @@ nvidia-nvjitlink==13.3.33
 nvidia-nvshmem-cu13==3.4.5
 nvidia-nvtx==13.0.85
 ollama==0.6.2
+openapi-pydantic==0.5.1
 opentelemetry-api==1.44.0
 orjson==3.11.9
 ormsgpack==1.12.2
