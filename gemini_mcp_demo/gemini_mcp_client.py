@@ -67,6 +67,13 @@ async def main():
     # ----------------------------------
 
     print(result["messages"])
+    for message in result["messages"]:
+        print("\n---")
+        print("Type:", type(message).__name__)
+        print("Content:", message.content)
+
+        if hasattr(message, "tool_calls"):
+            print("Tool calls:", message.tool_calls)
     #print("\nFinal answer:")
     #print(result["messages"][-1].content)
 
