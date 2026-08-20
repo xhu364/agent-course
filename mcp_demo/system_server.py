@@ -61,5 +61,21 @@ def get_disk_usage(path: str = "/") -> dict:
         "percent": percent,
     }
 
+@mcp.resource("config://server")
+def server_config() -> str:
+    """Return the server configuration."""
+    return """
+server_name: ubuntu-z640
+environment: development
+location: home-lab
+port: 8002
+"""
+
+@mcp.resource("document://employee-handbook")
+def employee_handbook():
+    return """
+    Employees receive 20 days of PTO...
+    """
+
 if __name__ == "__main__":
     mcp.run(transport="streamable-http", host="0.0.0.0", port=8000)

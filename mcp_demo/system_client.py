@@ -21,6 +21,11 @@ async def main():
                 print(f"- {tool.name}")
                 print(f"  {tool.description}")
 
+            resources = await session.list_resources()
+            for resource in resources.resources:
+                print(f"- {resource.name}")
+                print(f"  {resource.description}")
+
             result = await session.call_tool(
                 "get_cpu_usage",
                 arguments={},
@@ -45,6 +50,8 @@ async def main():
             )
 
             print("Result:")
+            print(result)
+            result = await session.read_resource("config://server")
             print(result)
 
 

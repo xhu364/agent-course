@@ -56,7 +56,7 @@ async def main():
             "messages": [
                 (
                     "user",
-                    "What is 123 * 456?"
+                    "How much memory in MB is currently being used?",
                 )
             ]
         }
@@ -80,3 +80,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
