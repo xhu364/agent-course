@@ -23,7 +23,7 @@ def save_embeddings(
                     source TEXT NOT NULL,
                     model TEXT NOT NULL,
                     text TEXT NOT NULL,
-                    embedding TEXT NOT NULL
+                    embedding VECTOR(384) NOT NULL
                 )
                 """)
             cursor.execute(
